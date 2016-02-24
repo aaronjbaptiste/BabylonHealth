@@ -1,0 +1,264 @@
+/* 
+
+Notes from Aaron:
+
+ 1. Ideally the different sections would be split up into main.css, nav.css etc 
+    and combined in the build process using gulp for example.
+ 2. I'd usually advise using em and relative units for better responsiveness. 
+    For time i've opted for px in some places. 
+
+*/
+
+/* main */
+html {
+    position: relative;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    padding-top: 50px;
+    margin-bottom: 60px;
+}
+
+.main {
+    padding: 10px 0px;
+    min-height: 800px;
+}
+
+.container {
+    max-width: 800px;
+}
+
+/* navigation */
+.navbar.navbar-inverse {
+    background-color: #7c6991;
+}
+
+.navbar .navbar-nav>.active>a, 
+.navbar .navbar-nav>.active>a:focus, 
+.navbar .navbar-nav>.active>a:hover {
+    margin-bottom: 2px;
+    padding-bottom: 11px;
+    border-bottom: 2px solid #fff;
+    background: none;
+    font-weight: 400;
+}  
+
+/* footer */
+.footer {
+    position: absolute;
+    width: 100%;
+}
+
+.breadcrumb {
+    background: none;
+    border-bottom: 1px solid #aeaeae;
+    border-radius: 0;
+    margin-bottom: 14px;
+}
+
+.breadcrumb>li+li:before {
+    padding: 0 5px;
+    color: #ccc;
+    content: ">\00a0";
+}
+
+.footer a {
+    color: inherit;
+}
+
+ul.legal {
+    margin-left: 5px;
+}
+
+ul.legal>li+li:before {
+    padding: 0 13px 0 0;
+    color: #ccc;
+    content: "|";
+}
+
+/* headings */
+h1, h2 {
+    color: #7c6991;
+}
+
+h2 {
+    font-size: 1.6em;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* bablyon themed defaults */
+b, strong {
+    font-weight: 400;
+}
+
+/* buttons */
+
+.btn.btn-raised.btn-primary,
+.btn.btn-raised:active.btn-primary,
+.btn.btn-raised:not(.btn-link):hover.btn-primary,
+.btn.btn-raised:not(.btn-link):active.btn-primary,
+.btn.btn-raised:not(.btn-link):focus.btn-primary
+{
+    background-color: #2980b9;
+}
+
+.btn.btn-raised.btn-default,
+.btn.btn-raised:active.btn-default,
+.btn.btn-raised:not(.btn-link):hover.btn-default,
+.btn.btn-raised:not(.btn-link):active.btn-default,
+.btn.btn-raised:not(.btn-link):focus.btn-default
+{
+    background-color: #8ddbcb;
+    font-weight: 100;
+    color: #fff;
+    min-width: 250px;
+}
+
+.btn.btn-raised.btn-default span {
+    display: block;
+    font-size: 0.8em;
+}
+
+.jumbotron.booking .btn
+{
+    min-width: 250px;
+}
+
+/* img */
+img.dynamic {
+    width: 100%;
+    height: auto;
+}
+
+/* icons */
+.b-icon {
+    background: #7c6991;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    padding: 9px;
+    float: left;
+    margin: 10px;
+}
+
+/* main jumbotron */
+.jumbotron p {
+    font-size: 1.2em;
+}
+
+.jumbotron .img-frame {
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+}
+
+.jumbotron .ignore-padding {
+    margin: 0 -19px;
+    width: auto;
+}
+
+.jumbotron .btn.doctor {
+    margin: 19px 0 0 0;  
+}
+
+.jumbotron .btn.book {
+    margin: 30px; 
+}
+
+.container .jumbotron.booking {
+    padding: 0;
+}
+
+.jumbotron.booking section {
+    padding: 10px 0;
+    border-bottom: 2px solid #eee;
+}
+
+/* modals */
+.modal-dialog {
+    width: 300px;
+}
+
+.modal-content .modal-header {
+    background-color: #2980b9;
+    color: #fff;
+    padding-top: 0;
+}
+
+.modal-content .modal-body {
+    padding: 0;
+}
+
+.modal-header h4 {
+    text-align: center;
+    padding: 10px;
+}
+
+select.form-control[multiple],
+.form-group.is-focused select.form-control[multiple] {
+    height: 300px;
+    overflow: visible;
+}
+
+/* forms */
+.form-group {
+    margin: 0;
+}
+
+.modal option {
+    padding: 10px 20px;
+}
+
+.modal-content .modal-footer {
+    padding: 19px;
+}
+
+.modal-content .modal-footer button {
+    width: 100%;
+}
+
+.form-group input.form-control {
+    background: none;
+    width: 110px;
+}
+
+/* booking lists */
+.or-list {
+    margin-bottom: 0;
+}
+
+.or-list li {
+    margin: 5px 12px;
+}
+
+.or-list>li+li:before {
+    color: #ccc;
+    content: "or";
+    float: left;
+    margin: 14px 0 0 -15px;
+    padding-right: 26px;
+}
+
+.or-list article {
+    float: right;
+    width: 60px;
+    height: 60px;
+    padding: 4px;
+}
+
+.or-list li.selected article {
+    background-color: #efefef;
+    border-radius: 50%;
+}
+
+.or-list li {
+    cursor: pointer;
+}

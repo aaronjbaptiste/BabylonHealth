@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A GP and more in your pocket">
+
+        <link rel="icon" href="favicon.ico">
+
+        <title>Babylon Health - Web App</title>
+
+         <!-- Material Design fonts -->
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <!-- Twitter Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Bootstrap Material descriptionign -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.8/css/bootstrap-material-design.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.8/css/ripples.min.css">
+
+        <!-- Custom CSS: This would usually be compiled via LESS/SASS -->
+        <link rel="stylesheet" href="css/main.css">
+
+    </head>
+    <body>
+
+        <header>
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <!-- I'd usually opt for icons from fontawesome for this kind of
+                            thing, sticking to png for simplicity. -->
+                            <img src="img/heart-outline.png" alt="babylon" />
+                        </a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="book.html">Book a Consultation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+
+            <div class="main">
+                <h1>Welcome, How Can We Help You?</h1>
+                <div class="bs-component">
+                    <div class="jumbotron">
+                        <header class="clearfix">
+                            <div class="b-icon"><img src="img/stethoscope.png" /></div>
+                            <h2>Book a Consultation</h2>
+                        </header>
+                        <section>
+                            <p>Seeing a doctor is easy. You can book a consultation in seconds and speak to a leading GP in minutes. Most of the time patients' problems are resolved there and then, with prescriptions arranged where necessary.
+                            <br />Our UK and Ireland based GPs are available wherever you are, at a time that suits you.
+                            <p><strong>Unlimited consultations for just £4.99 or €7.99 per month.</strong></p>
+                        </section>
+                        <div class="img-frame ignore-padding">
+                            <img class="dynamic" src="img/doctor.jpg" />
+                        </div>
+                        <a href="book.html" class="btn btn-raised btn-primary doctor">See a Doctor now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+
+        <footer class="footer text-muted">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <!-- re-used the same icon instead of the smaller gray version for time -->
+                    <li><a href="index.html"><img src="img/heart-outline.png" /></a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">PageTitle</a></li>
+                </ul>
+                <p class="pull-left">Babylon Health (C) 2015 All Right Reserved.</p>
+                <ul class="list-inline legal pull-left">
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+                <!-- I've chosen to skip inserting App store icons to save on time -->
+            </div>
+        </footer>
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <!-- Bootstrap js -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap Material Design -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.8/js/ripples.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.8/js/material.min.js"></script>
+        <script>
+            // material design bootstrap plugin
+            $.material.init();
+        </script>
+
+    </body>
+</html>

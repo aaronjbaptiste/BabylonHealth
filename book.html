@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A GP and more in your pocket">
+
+        <link rel="icon" href="favicon.ico">
+
+        <title>Babylon Health - Web App</title>
+
+         <!-- Material Design fonts -->
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <!-- Twitter Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Bootstrap Material descriptionign -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.8/css/bootstrap-material-design.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.8/css/ripples.min.css">
+
+        <!-- Custom CSS: This would usually be compiled via LESS/SASS -->
+        <link rel="stylesheet" href="css/main.css">
+
+    </head>
+    <body>
+
+        <header>
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <!-- I'd usually opt for icons from fontawesome for this kind of
+                            thing, sticking to png for simplicity. -->
+                            <img src="img/heart-outline.png" alt="babylon" />
+                        </a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active"><a href="book.html">Book a Consultation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+
+            <div class="main">
+                <h1>Book a Consultation</h1>
+                <div class="bs-component">
+                    <div class="jumbotron text-center booking">
+                        <section>
+                            <h3 class="text-muted">Book this consultation for</h3>
+                            <ul id="family-list" class="list-inline or-list">
+                                <li>
+                                    <!-- Family is pulled from fake server - see js/views/family-view.js -->
+                                    <article id="add-user">
+                                        <img src="img/new-user.png" />
+                                        <div style="margin-left: -4px">Someone else</div>
+                                    </article>
+                                </li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3 class="text-muted">Select a healthcare professional</h3>
+                            <!-- Hardcoded, you could pull these types from the db -->
+                            <ul class="list-inline or-list doctor-types">
+                                <li>
+                                    <article>
+                                        <img src="img/surgeon.png" />
+                                        <div>GP</div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article>
+                                        <img src="img/surgeon.png" />
+                                        <div>Nurse</div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article>
+                                        <img src="img/surgeon.png" />
+                                        <div>Therapist</div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article>
+                                        <img src="img/surgeon.png" />
+                                        <div>Specialist</div>
+                                    </article>
+                                </li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3 class="text-muted">Select the doctor</h3>
+
+                            <!-- Updates based on doctor selected -->
+                            <button type="button" id="current-doctor" class="btn btn-raised btn-default" data-toggle="modal" data-target="#doctor-dialog">Dr. Paul Devis<span>GP</span></button>
+                        </section>
+                        <section>
+                            <h3 class="text-muted">Next available appoinment</h3>
+
+                            <!-- This would update similar to Doctors button, not implemented -->
+                            <button type="button" id="current-time" class="btn btn-raised btn-default" data-toggle="modal" data-target="#time-dialog">May 30 at 14:00<span>Click to select a different time</span></button>
+                        </section>
+                        <section>
+                            <h3><strong>Get the best from your consultation by uploading a photo or a note</strong></h3>
+                            <!-- Afraid I didn't have enough time to figure out how the Material design 
+                            Bootstrap plugin worked in regards to file uploads. This is a little bit buggy! -->
+                            <ul class="list-inline">
+                                <li>
+                                    <div class="form-group is-empty is-fileinput">
+                                        <input type="file" id="inputFile1">
+                                        <div class="input-group">
+                                            <input type="text" readonly="" class="form-control" placeholder="Attach a photo">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group is-empty is-fileinput">
+                                        <input type="file" id="inputFile1">
+                                        <div class="input-group">
+                                            <input type="text" readonly="" class="form-control" placeholder="Add a note">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- Backbone would pick the click up and create a 
+                        post request to /api/book or similar with all the required data-->
+                        <a href="#" class="btn btn-raised btn-primary book">Book Consultation</a>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+
+        <footer class="footer text-muted">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <!-- re-used the same icon instead of the smaller gray version for time -->
+                    <li><a href="index.html"><img src="img/heart-outline.png" /></a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">PageTitle</a></li>
+                </ul>
+                <p class="pull-left">Babylon Health (C) 2015 All Right Reserved.</p>
+                <ul class="list-inline legal pull-left">
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+                <!-- I've chosen to skip inserting App store icons to save on time -->
+            </div>
+        </footer>
+
+        <!-- Templates - These should be in separate files -->
+        <script type="text/template" id="user-template">
+            <article>
+                <img src="<%= photo %>" />
+                <div><%= firstName %></div>
+            </article>
+        </script>
+
+        <script type="text/template" id="doctor-template">
+            <%= title %>. <%= firstName %> <%= lastName %>
+        </script>
+
+        <!-- Modals -->
+        <div id="doctor-dialog" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Select Doctor</h4>
+                    </div>
+                    <div class="modal-body">
+                        <select id="doctor-list" multiple class="form-control">
+                            <!-- Doctors are pulled from fake server - see js/views/doctors-view.js -->
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-raised" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="time-dialog" class="modal fade" tabindex="-1">
+          <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Select time</h4>
+                    </div>
+                    <div class="modal-body">
+                        <select id="time-list" multiple class="form-control">
+                            <!-- hardcoded - ideally these would be specific to doctors availability -->
+                            <option>May 30 at 14:00</option>
+                            <option>May 30 at 15:00</option>
+                            <option>May 30 at 16:00</option>
+                            <option>May 30 at 17:00</option>
+                            <option>June 1 at 11:00</option>
+                            <option>June 1 at 12:00</option>
+                            <option>June 1 at 13:00</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-raised" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <!-- Bootstrap js -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap Material Design -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.8/js/ripples.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.8/js/material.min.js"></script>
+        <script>
+            $.material.init();
+        </script>
+
+        <!-- Backbone js framework -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js"></script>
+        
+        <!-- MVC app, in practise these would be combined + minified in the build process -->
+        <script src="js/models/user.js"></script>
+        <script src="js/models/doctor.js"></script>
+        <script src="js/collections/family.js"></script>
+        <script src="js/collections/doctors.js"></script>
+        <script src="js/views/family-view.js"></script>
+        <script src="js/views/user-view.js"></script>
+        <script src="js/views/doctors-view.js"></script>
+        <script src="js/views/doctor-view.js"></script>
+        <script src="js/views/doctor-type-view.js"></script>
+        <script src="js/app.js"></script>
+
+    </body>
+</html>
